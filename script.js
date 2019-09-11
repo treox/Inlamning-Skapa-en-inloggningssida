@@ -18,6 +18,7 @@ loginB.addEventListener('click', function() {
     }
     else {
         alert("Fel användarnamn eller lösenord");
+        manSidaEJOK();
     }
 });
 
@@ -26,5 +27,13 @@ function manSidaOK() {
     bodyE.removeChild(formE);
     var paraE = document.createElement("p");
     paraE.innerHTML = "Grattis! Du är inloggad.";
+    bodyE.appendChild(paraE);
+}
+
+// Andrar sidan om inloggning inte är ok:
+function manSidaEJOK() {
+    bodyE.removeChild(formE);
+    var paraE = document.createElement("p");
+    paraE.innerHTML = "Felkod: Fel användarnamn eller lösenord.";
     bodyE.appendChild(paraE);
 }
