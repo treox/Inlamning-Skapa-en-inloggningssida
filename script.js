@@ -33,16 +33,14 @@ else if (one && two && one !== test && two !== losenord) {
     manSidaEJOK();
 }
 
-console.log(one , two);
-
-localStorage.clear();
-
 // Andrar sidan om inloggning är ok:
 function manSidaOK() {
     bodyE.removeChild(formE);
     var paraE = document.createElement("p");
     paraE.innerHTML = "Grattis! Du är inloggad.";
     bodyE.appendChild(paraE);
+
+    bodyE.insertAdjacentHTML('beforeend', '<button id="log-outb">Logga ut</button>')
 }
 
 // Andrar sidan om inloggning inte är ok:
@@ -51,4 +49,23 @@ function manSidaEJOK() {
     var paraE = document.createElement("p");
     paraE.innerHTML = "Felkod: Fel användarnamn eller lösenord.";
     bodyE.appendChild(paraE);
+
+    bodyE.insertAdjacentHTML('beforeend', '<button id="re-turnb">Tillbaka</button>')
+}
+
+if (one === test && two === losenord) {
+    let logoutb = document.getElementById("log-outb");
+
+    logoutb.addEventListener('click', function() {
+        localStorage.clear();
+        location.reload();
+    });
+}
+else if (one && two && one !== test && two !== losenord) {
+    let returnb = document.getElementById("re-turnb");
+
+    returnb.addEventListener('click', function() {
+        localStorage.clear();
+        location.reload();
+    });
 }
