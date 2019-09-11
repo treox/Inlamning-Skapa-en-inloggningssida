@@ -12,15 +12,30 @@ loginB.addEventListener('click', function() {
     let iNamn = inpNamn.value;
     let iLosen = inpLosen.value;
 
-    if (iNamn === test && iLosen === losenord) {
-        alert("Grattis! Du är inloggad");
-        manSidaOK();
-    }
-    else {
-        alert("Fel användarnamn eller lösenord");
-        manSidaEJOK();
+    localStorage.clear();
+
+    if (iNamn && iLosen) {
+        localStorage.setItem(iNamn, iLosen);
     }
 });
+
+for (let i = 0; i < localStorage.length; i++) {
+    var one = localStorage.key(i);
+    var two = localStorage.getItem(one);
+}
+
+if (one === test && two === losenord) {
+    alert("Grattis! Du är inloggad");
+    manSidaOK();
+}
+else if (one && two && one !== test && two !== losenord) {
+    alert("Fel användarnamn eller lösenord");
+    manSidaEJOK();
+}
+
+console.log(one , two);
+
+localStorage.clear();
 
 // Andrar sidan om inloggning är ok:
 function manSidaOK() {
