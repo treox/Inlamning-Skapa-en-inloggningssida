@@ -33,6 +33,12 @@ for (let i = 0; i < localStorage.length; i++) {
 if (one === namn && two === losenord) {
     manSidaOK();    // Funktion inloggning ok
 }
+else if (one && two && one !== namn && two === losenord) {
+    manSidaEJOK();  //Funktion inloggning ej ok
+}
+else if (one && two && one === namn && two !== losenord) {
+    manSidaEJOK();  //Funktion inloggning ej ok
+}
 else if (one && two && one !== namn && two !== losenord) {
     manSidaEJOK();  //Funktion inloggning ej ok
 }
@@ -67,11 +73,27 @@ if (one === namn && two === losenord) {
         location.reload();
     });
 }
-else if (one && two && one !== namn && two !== losenord) {
+else if (one && two && one !== namn && two === losenord) {
     let returnb = document.getElementById("re-turnb");
 
     returnb.addEventListener('click', function() {
         localStorage.clear();
         location.reload();
     });
+}
+else if (one && two && one === namn && two !== losenord) {
+    let returnb = document.getElementById("re-turnb");
+
+    returnb.addEventListener('click', function() {
+        localStorage.clear();
+        location.reload();
+});
+}
+else if (one && two && one !== namn && two !== losenord) {
+    let returnb = document.getElementById("re-turnb");
+
+    returnb.addEventListener('click', function() {
+        localStorage.clear();
+        location.reload();
+});
 }
