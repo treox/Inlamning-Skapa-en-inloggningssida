@@ -29,10 +29,10 @@ loginB.addEventListener('click', function() {
 if (one === namn && two === losenord) {
     manSidaOK();    // Funktion inloggning ok
 }
-else if (one && two && one !== namn && two === losenord) {
+else if (one !== namn && two === losenord) {
     manSidaEJOK();  //Funktion inloggning ej ok
 }
-else if (one && two && one === namn && two !== losenord) {
+else if (one === namn && two !== losenord) {
     manSidaEJOK();  //Funktion inloggning ej ok
 }
 else if (one && two && one !== namn && two !== losenord) {
@@ -69,7 +69,7 @@ if (one === namn && two === losenord) {
         location.reload();
     });
 }
-else if (one && two && one !== namn && two === losenord) {
+else if (one !== namn && two === losenord) {
     let returnb = document.getElementById("re-turnb");
 
     returnb.addEventListener('click', function() {
@@ -77,7 +77,7 @@ else if (one && two && one !== namn && two === losenord) {
         location.reload();
     });
 }
-else if (one && two && one === namn && two !== losenord) {
+else if (one === namn && two !== losenord) {
     let returnb = document.getElementById("re-turnb");
 
     returnb.addEventListener('click', function() {
