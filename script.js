@@ -14,18 +14,14 @@ loginB.addEventListener('click', function() {
     let iNamn = inpNamn.value;
     let iLosen = inpLosen.value;
 
-    localStorage.clear();   // Tömmer localStorage innan data sparas
-
     if (iNamn && iLosen) {
         localStorage.setItem(iNamn, iLosen);
     }
 });
 
 // Hämtar data från localStorage:
-for (let i = 0; i < localStorage.length; i++) {
-    var one = localStorage.key(i);
+    var one = localStorage.key(0);
     var two = localStorage.getItem(one);
-}
 
 /* Statement som kontrollerar inloggningsuppgifter 
     och modifierar sidan beroende på om inloggning lyckas
