@@ -46,7 +46,7 @@ function manSidaOK() {
     paraE.innerHTML = "Välkommen! Du är inloggad.";
     bodyE.appendChild(paraE);
 
-    bodyE.insertAdjacentHTML('beforeend', '<button id="log-outb">Logga ut</button>')
+    bodyE.insertAdjacentHTML('beforeend', '<button id="log-outb">Logga ut</button>');
 }
 
 // Funktion som modifierar sidan om inloggning misslyckas:
@@ -56,7 +56,7 @@ function manSidaEJOK() {
     paraE.innerHTML = "Felkod: Fel användarnamn eller lösenord.";
     bodyE.appendChild(paraE);
 
-    bodyE.insertAdjacentHTML('beforeend', '<button id="re-turnb"><--Tillbaka</button>')
+    bodyE.insertAdjacentHTML('beforeend', '<button id="re-turnb"><--Tillbaka</button>');
 }
 
 /* If-statement som kontrollerar vilken knapp som ska aktiveras
